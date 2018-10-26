@@ -1,10 +1,15 @@
-package ch1_arrays_and_strings;
+package ch1_arrays_strings;
 
 import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.*;
 
-public class One_One_isUniqueTest {
+public class Problem_1_1_isUniqueTest {
+
+    /*
+    Write a method to check if a string has all unique characters.
+    What if you cannot use additional data structures?
+     */
 
     //Works for all Unicode values
     boolean isUnique(String string){
