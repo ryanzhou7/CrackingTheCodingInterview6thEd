@@ -14,16 +14,16 @@ public class Problem_2_1_removeDupsTest {
     What if you cannot use additional data structures?
      */
 
-    private class Node{
-        int val;
-        Node next = null;
-        Node(int val){
+    private class Node<T>{
+        T val;
+        Node<T> next = null;
+        Node(T val){
             this.val = val;
         }
     }
 
-    private void removeDups(Node head){
-        Set<Integer> existingNodes = new HashSet<>();
+    private <T> void removeDups(Node<T> head){
+        Set<T> existingNodes = new HashSet<>();
         existingNodes.add(head.val);
         while(head.next!=null){
             if(existingNodes.contains(head.next.val)){
@@ -36,10 +36,10 @@ public class Problem_2_1_removeDupsTest {
         }
     }
 
-    private void removeDupsNoDataStructs(Node head){
+    private <T> void removeDupsNoDataStructs(Node<T> head){
         Node current = head;
         while (current!=null){
-            int val = current.val;
+            T val = (T) current.val;
             Node runner = current;
             while (runner.next!=null){
                 if(val==runner.next.val){
@@ -126,7 +126,7 @@ public class Problem_2_1_removeDupsTest {
 
     private boolean hasSameVals(int[] array, Node head){
         for(int val: array){
-            if(head ==null || val!=head.val) return false;
+            if(head ==null || val!=(int)head.val) return false;
             head = head.next;
         }
         return head==null;
